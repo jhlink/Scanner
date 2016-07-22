@@ -20,7 +20,7 @@ def main(x,list,start_time):
 	
 	
 
-	while( time.time()-start_time<5):
+	while( time.time()-start_time<3600):
 		x =x+1
 		BarCode  = raw_input("")
 		BarCode  = str(BarCode)
@@ -31,8 +31,8 @@ def main(x,list,start_time):
 	for x in a:
     		f.write(x+'\n')
 	f.close()
-	fromaddr = "indianhomie123@gmail.com"
-	toaddr = "shaq@firstbuild.com"
+	fromaddr = "FirstBuildInventory@gmail.com"
+	toaddr = "james@firstbuild.com, tim@firstbuild.com"
 	msg = MIMEMultipart()
 	msg['From'] = fromaddr
 	msg['To'] = toaddr
@@ -47,7 +47,7 @@ def main(x,list,start_time):
 	 
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
-	server.login(fromaddr, "asmahesh")
+	server.login(fromaddr, "firstbuild")
 	text = msg.as_string()
 	server.sendmail(fromaddr, toaddr, text)
 	server.quit()
